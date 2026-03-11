@@ -76,13 +76,8 @@ async def main(page: ft.Page):
         return ft.Column(
             [
                 ft.Text("História do povo Kiriri", size=30, weight=ft.FontWeight.BOLD),
-                ft.Text(" A história do povo Kiriri começou a " \
-                "ser contada a partir dos primeiros contatos " \
-                "com os portugueses. O povo estaria " \
-                "espalhado pelo interior entre as margens do" \
-                " São Francisco e as do Rio Acaracu, um extenso território, " \
-                "do Ceará à Paraíba e até uma porção setentrional do " \
-                "sertão baiano.", size=18),
+                ft.Text("A história desse povo começa a ser contada a partir do primeiro contato com os portugueses. O povo estaria espalhado  pelo interior " \
+                "entre as margens do São Francisco e as do Rio Acaracu, um extenso território, do Ceará à Paraíba e até uma porção setentrional do sertão baiano.", size=18),
                 ft.Text("Foi nas terras dos Kiriri que os primeiros jesuítas se instalaram, " \
                 "na segunda metade do século XVII.  " \
                 "É possível observar que em toda área do circuito missionário, " \
@@ -117,9 +112,26 @@ async def main(page: ft.Page):
         return ft.Column(
             [
                 ft.Text("Página sobre o Projeto", size=30, weight=ft.FontWeight.BOLD),
-                ft.Text("Meu nome é Giovanna, tenho 19 anos, sou estudante do curso de Letras na Unicamp e no ensino médio fiz curso técnico de informática, onde sonhei em desenvolver um tradutor, mas três anos passaram muito rápido e tudo acabou ficando para trás. A ideia do projeto surgiu em uma aula de Fonética, Fonologia e Morfologia da professora Ivana, quando ela estava explicando um pouco sobre o sistema fonético da língua Guarani. Naquela aula eu vi uma oportunidade de tornar realidade o antigo desejo, no mesmo dia, conversei com ela sobre criar um tradutor, contei um pouco de uma história de vida e deu certo, ela gostou da ideia e assim começamos.", size=18),
-                ft.Text("Inicialmente, eu não sabia com qual língua indígena eu iria trabalhar. A profª Ivana me apresentou as três línguas que ela trabalha e foi assim que conheci um pouco do povo Kiriri. Ela me explicou que eles só possuem uma memória lexical de sua língua e aquilo me comoveu, porque uma parte da individualidade deles foi tirada, não se tem mais falantes ativos. Marcamos nossa primeira reunião, onde ela me apresentou a professora Micheline que trabalha com essa parte de Ti dessa forma eu tinha uma orientadora e coorientadora. Nós definimos quais linguagens eu programaria, qual ambiente e demos uma breve pensada em como funcionaria o aplicativo, montamos o resumo do trabalho e submetemos o projeto à bolsa.", size=18),
-                ft.Text("São meses de estudo, de leituras e muita aprendizagem dos e com os Kiriri, tudo para entender mais sobre quem são, quem foram e sua importância na história. São o único povo do sertão com registros, sendo de um catecismo e duas gramáticas. São anos lutando, tentando manter vivo um dos maiores traços de individualidade que um povo pode ter. Me sinto muito honrada de fazer parte de um processo tão importante e bonito que é o de revitalização da língua. É mais que um projeto de iniciação científica é humanidade, dignidade, empoderamento e empatia", size=18),
+                ft.Text(
+                "O presente projeto tem como objetivo a elaboração de um aplicativo para tradução lexical "
+                "do português para uma língua indígena brasileira, a língua Kiriri, registrada no século XVII. "
+                "Pretende-se utilizar o corpus do 'Pequeno Dicionário da Língua Kiriri' em elaboração a partir "
+                "dos dados registrados na Arte de Grammatica da Língua Brazílica da Nação Kiriri (1699) e no "
+                "Catecismo da Doutrina Christãa na Lingua Brasilica da Nação Kiriri (1698), de autoria do padre "
+                "jesuíta Ludovico Vicenzo Mamiani. Pretende-se oferecer à comunidade Kiriri, do semiárido baiano, "
+                "um recurso tecnológico que pode ser utilizado nas escolas indígenas como parte do projeto de "
+                "retomada da língua indígena ancestral.",
+                size=18
+                ),
+                ft.Text("Este trabalho tem como objetivo trazer conhecimento e dar visibilidade a esta"
+                "língua ao tempo em que se insere como projeto de revitalização linguística,"
+                "desempenhando um papel social e político fundamental ao fortalecimento da identidade"
+                "histórica, cultural e linguística do povo Kiriri.", size=18),
+                ft.Text("O nome “Kiri”, para o App, é selecionado como homenagem ao povo Kiriri,"
+                "referindo-à àrvore chamada Kiri, que inspira o nome adotado pela etnia. Nasce com a"
+                "intenção de atuar junto à comunidade, além de promover a disseminação da língua"
+                "indígena Kiriri, um conhecimento necessário à comunidade que se encontra em situação"
+                "de retomada linguística.", size=18),
                 ft.TextButton("Voltar", on_click=lambda e: page.go("/")),
             ],
             alignment=ft.MainAxisAlignment.CENTER,
