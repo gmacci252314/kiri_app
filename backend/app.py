@@ -3,36 +3,41 @@ import flet as ft
 
 async def main(page: ft.Page):
     page.title = "Tradutor Kiri"
-
+    page.padding = 20
     # -------- MENU --------
     def tela_menu():
         return ft.Column(
-            [
-                ft.Row(
-                    [
-                        ft.IconButton(
-                            icon=ft.icons.PEOPLE,
-                            icon_size=40,
-                            on_click=lambda e: page.go("/kiriri"),
-                        ),
-                        ft.IconButton(
-                            icon=ft.icons.INFO,
-                            icon_size=40,
-                            on_click=lambda e: page.go("/projeto"),
-                        ),
-                        ft.IconButton(
-                            icon=ft.icons.TRANSLATE,
-                            icon_size=40,
-                            on_click=lambda e: page.go("/tradutor"),
-                        ),
-                    ],
-                    alignment=ft.MainAxisAlignment.CENTER,
-                    spacing=30,
-                )
-            ],
-            alignment=ft.MainAxisAlignment.CENTER,
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-        )
+        [
+            ft.Text("Tradutor Kiri", size=30, weight=ft.FontWeight.BOLD),
+
+            ft.Row(
+                [
+                    ft.IconButton(
+                        icon=ft.icons.PEOPLE,
+                        icon_size=50,
+                        tooltip="Povo Kiriri",
+                        on_click=lambda e: page.go("/kiriri"),
+                    ),
+                    ft.IconButton(
+                        icon=ft.icons.INFO,
+                        icon_size=50,
+                        tooltip="Sobre o Projeto",
+                        on_click=lambda e: page.go("/projeto"),
+                    ),
+                    ft.IconButton(
+                        icon=ft.icons.TRANSLATE,
+                        icon_size=50,
+                        tooltip="Tradutor",
+                        on_click=lambda e: page.go("/tradutor"),
+                    ),
+                ],
+                alignment=ft.MainAxisAlignment.CENTER,
+                spacing=40,
+            ),
+        ],
+        alignment=ft.MainAxisAlignment.CENTER,
+        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+    )
 
     # -------- TRADUTOR --------
     def tela_tradutor():
