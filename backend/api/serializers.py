@@ -5,9 +5,4 @@ class TraducaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Traducao
         fields = '__all__'
-        read_only_fields = [
-            'criado_em',
-            'idioma_kiriri',
-            'idioma_portugues',
-            'texto_traduzido'
-        ]
+        read_only_fields = ['criado_em',]
