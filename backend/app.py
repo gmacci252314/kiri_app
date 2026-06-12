@@ -83,6 +83,7 @@ async def main(page: ft.Page):
             )
         
         def traduzir(e):
+            print("CLIQUEI NO BOTÃO")
             palavra = txt_input.value.strip().lower()
 
             origem = dropdown_origem.value
@@ -94,8 +95,12 @@ async def main(page: ft.Page):
                 if resposta.status_code == 200:
                     traducoes = resposta.json()
 
+                    print("Palavra digitada:", palavra)
+                    print("Origem:", origem)
+                    print("Destino:", destino)
+
                     for item in traducoes:
-                         
+                        print(item["idioma_kiriri"], "->", item["idioma_portugues"])
                         # Português -> Kiriri
                         if (
                             origem == "português"
@@ -105,11 +110,11 @@ async def main(page: ft.Page):
                             resultado.value = (
                                 f"Tradução: {item['idioma_kiriri']}"
                             )
-                            page.update()
-                            return
+                            encontrou = True
+                            break
                         
                         # Kiriri -> Português
-                        if (
+                        elif (
                             origem == "kiriri"
                             and destino == "português"
                             and item["idioma_kiriri"].lower() == palavra
@@ -119,17 +124,6 @@ async def main(page: ft.Page):
                             )
                             encontrou = True
                             break
-                        
-                        if (
-                            origem == "kiriri"
-                            and destino == "português"
-                            and item["idioma_kiriri"].lower() == palavra
-                        ):
-                            resultado.value = (
-                                f"Tradução: {item['idioma_portugues']}"
-                            )
-                        encontrou = True
-                        break
                        
                     if not encontrou:
                         resultado.value = (
