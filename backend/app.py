@@ -83,7 +83,7 @@ async def main(page: ft.Page):
             )
         
         def traduzir(e):
-            print("CLIQUEI NO BOTÃO")
+            
             palavra = txt_input.value.strip().lower()
 
             origem = dropdown_origem.value
@@ -95,12 +95,9 @@ async def main(page: ft.Page):
                 if resposta.status_code == 200:
                     traducoes = resposta.json()
 
-                    print("Palavra digitada:", palavra)
-                    print("Origem:", origem)
-                    print("Destino:", destino)
 
                     for item in traducoes:
-                        print(item["idioma_kiriri"], "->", item["idioma_portugues"])
+                        
                         # Português -> Kiriri
                         if (
                             origem == "português"
