@@ -25,7 +25,7 @@ class TraducaoViewSet(viewsets.ModelViewSet):
         return queryset
 
 
-# 🔥 TEM QUE FICAR FORA DA CLASSE
+
 def traducao_list(request):
     consulta = request.GET.get("q")
 
@@ -49,7 +49,17 @@ def cadastrar_traducao(request):
     if request.method == "POST":
         idioma_kiriri = request.POST.get("idioma_kiriri")
         idioma_portugues = request.POST.get("idioma_portugues")
-
+    
+         # Verifica se o léxico já existe
+        if Traducao.objects.filter(idioma_kiriri__iexact=idioma_kiriri).exists():
+            return render(
+                request,
+                "api/cadastrar.html",
+                {
+                    "erro": "Léxico já está cadastrado na base de dados."
+                },
+            )
+        
         Traducao.objects.create(
             idioma_kiriri=idioma_kiriri,
             idioma_portugues=idioma_portugues
