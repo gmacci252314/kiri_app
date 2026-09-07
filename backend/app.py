@@ -198,6 +198,16 @@ def main(page: ft.Page):
                 "Por meio do aplicativo, espera-se auxiliar a comunidade indígena na educação escolar " \
                 "indígena e no processo de retomada linguística de sua língua ancestral. Palavras-chave: Línguas Indígenas, Kiriri Antigo, Retomada Linguística, Linguística, Tecnologia Social. ", size=18),
                 ft.Text("FONTE: Fernandes, Azevedo, Ivo (2026) - No Prelo", size=16, weight=ft.FontWeight.BOLD),
+                ft.Text("Referências Bibliográficas", size=16, weight=ft.FontWeight.BOLD),
+                ft.Text("DAGNINO, Renato. Tecnologia social: contribuições conceituais e metodológicas. Campina Grande: EDUEPB; Florianópolis: Insular, 2014, pp. 71 – 108." \
+                "DANTAS, Beatriz G.; SAMPAIO, José Augusto L.; CARVALHO, Maria Rosário G. de. Os povos indígenas no Nordeste brasileiro: um esboço histórico. In: CUNHA, Manuela Carneiro da (org.). História dos índios no Brasil. São Paulo: Companhia das Letras, Secretaria Municipal de Cultura, FAPESP, 1992, pp. 431-456." \
+                "FERNANDES, Giovanna M. ; AZEVEDO, Micheline Maria C.; IVO, Ivana Pereira, 2026 (No prelo)" \
+                "HALLIDAY, Michael Alexander Kirkwood; MATTHIESSEN, Christian Matthias Ingemar Martin. *Halliday's introduction to functional grammar. 4.ed. London: Routledge, 2014." \
+                "MAMIANI, Luiz Vincencio. Arte de Grammatica da Lingua Brazilica da Naçam Kiriri. Lisboa: Miguel Deslandes, 1699." \
+                "MAMIANI, Luiz Vincencio. Arte de Grammatica da Lingua Brazilica da Nação Kiriri. 2a. edição (com notas introdutórias de Batista Caetano de Almeida Nogueira). Rio de Janeiro: Bibliotheca Nacional, 1877 [1699]." \
+                "MAMIANI, Luiz Vincencio. Catecismo da Doutrina Christãa na Lingua Brasilica da Nação Kiriri. Lisboa: Miguel Deslandes, 1698." \
+                "MAMIANI, Luiz Vincencio. 1942 [1698]. Catecismo da Doutrina Christãa na Lingua Brasilica da Nação Kiriri. Lisboa. (Edição fac-similar, Rio de Janeiro: Biblioteca Nacional)." \
+                "SANTOS, Ane Luíse Silva Mecenas. O Trato da Perpétua Tormenta: a conversão Kiriri nos sertões dentro da América portuguesa. Aracaju: Editora Diário Oficial do Estado de Sergipe - EDISE, 2020, pp. 29-160.", size=14, weight=ft.FontWeight.BOLD),
                 ft.TextButton("Voltar", on_click=lambda e: page.go("/")),
             ],
         )
