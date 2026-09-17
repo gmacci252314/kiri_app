@@ -1,35 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
-    <title>Editar Tradução</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+
+    <title>Editar Léxico</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 </head>
 
-<body class="container mt-5">
+<body class="bg-light">
 
-    <h2>Editar Tradução</h2>
+    <div class="container mt-5">
 
-    <form method="POST">
-        {% csrf_token %}
+        <div class="card shadow p-4">
 
-        <div class="mb-3">
-            <label>Kiriri</label>
-            <input type="text" name="idioma_kiriri" class="form-control"
-                   value="{{ traducao.idioma_kiriri }}">
+            <h2 class="mb-4">Editar Léxico</h2>
+            {% if erro %}
+                <div class="alert alert-danger">
+            {{ erro }}
+                </div>
+            {% endif %}
+            
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label class="form-label">Kiriri Antigo</label>
+
+                    <input
+                        type="text"
+                        name="kiriri_antigo"
+                        class="form-control"
+                        value="{{ traducao.kiriri_antigo }}"
+                        required
+                    >
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">Interp. Fonética</label>
+
+                    <input
+                        type="text"
+                        name="interp_fonetica"
+                        class="form-control"
+                        value="{{ traducao.interp_fonetica }}"
+                    >
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">Atualização da Escrita</label>
+
+                    <input
+                        type="text"
+                        name="atualizacao_escrita"
+                        class="form-control"
+                        value="{{ traducao.atualizacao_escrita }}"
+                    >
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">Sentido</label>
+
+                    <input
+                        type="text"
+                        name="sentido"
+                        class="form-control"
+                        value="{{ traducao.sentido }}"
+                        required
+                    >
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">Referência</label>
+
+                    <input
+                        type="text"
+                        name="referencia"
+                        class="form-control"
+                        value="{{ traducao.referencia }}"
+                    >
+                </div>
+
+
+                <div class="d-flex gap-2">
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Salvar
+                    </button>
+
+                    <a
+                        href="{% url 'traducao_list' %}"
+                        class="btn btn-secondary"
+                    >
+                        Voltar
+                    </a>
+
+                </div>
+
+            </form>
+
         </div>
 
-        <div class="mb-3">
-            <label>Português</label>
-            <input type="text" name="idioma_portugues" class="form-control"
-                   value="{{ traducao.idioma_portugues }}">
-        </div>
-
-        <button class="btn btn-primary">Salvar</button>
-
-        <a href="{% url 'traducao_list' %}" class="btn btn-secondary">
-            Voltar
-        </a>
-    </form>
+    </div>
 
 </body>
+
 </html>
